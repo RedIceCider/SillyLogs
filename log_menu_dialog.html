@@ -1,0 +1,22 @@
+<div class="wide100p">
+    <h3>Share Chat Log</h3>
+    <div>
+        <p>Export chatlog as a <a href="https://sprites.neocities.org/logs/reader">Sprites</a> readble JSON and upload
+            to catbox.<br>
+            Note: exports inline images too, if any.</p>
+        <div class="flex-container flexFlowColumn justifyCenter alignItemsCenter">
+            <div>
+                <label for="message_range_input">Specify Range:</label>
+                <input type="text" id="message_range_input" class="marginLeft5" placeholder="e.g., 0-39"
+                    style="background-color: var(--black30a); border: var(--SmartThemeBorderColor);">
+            </div>
+            <div class="flex-container alignItemsCenter">
+                <label for="force_upload_checkbox">Force upload character card:</label>
+                <input type="checkbox" id="force_upload_checkbox" class="marginLeft5">
+            </div>
+            <button id="share_log_button" class="btn btn-primary menu_button whitespacenowrap marginTop5">
+                <i class="fa-solid fa-share margin-r5"></i> Share Log
+            </button>
+        </div>
+    </div>
+</div>

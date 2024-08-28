@@ -1,0 +1,61 @@
+<style>
+    .sillylogs-content {
+        padding: 5px;
+    }
+
+    .sillylogs-description {
+        font-size: 0.9em;
+        color: #888;
+        margin-bottom: 10px;
+    }
+
+    .sillylogs-input {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0px;
+        background-color: var(--black30a);
+        border: 1px solid var(--SmartThemeBorderColor);
+    }
+
+    .sillylogs-input-group {
+        margin-bottom: 10px;
+    }
+
+    .sillylogs-label {
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
+<div id="sillylogs_extension">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>SillyLogs</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <div class="sillylogs-content">
+                <div class="sillylogs-input-group">
+                    <label for="user_hash" class="sillylogs-label"><b>Catbox User Hash</b></label>
+                    <span>Requires a catbox account. Generate hash <a href="https://catbox.moe/user/manage.php"
+                            target="_blank">here</a>.
+                    </span>
+                    <input id="user_hash" type="text" placeholder="User Hash" class="sillylogs-input" />
+                </div>
+                <div class="sillylogs-input-group">
+                    <label for="cors_proxy_url" class="sillylogs-label"><b>CORS Proxy URL</b></label>
+                    <span>Include {url} macro for the target URL.</span>
+                    <input id="cors_proxy_url" type="text" placeholder="https://example.com/proxy?url={url}"
+                        class="sillylogs-input" />
+                </div>
+                <div class="flex alignItemsCenter">
+                    <a name="use_proxy_help" class="note-link-span fa-solid fa-circle-question"
+                        href="https://github.com/RedIceCider/SillyLogs" title="help" target="_blank"></a>
+                    <label for="use_proxy_checkbox">Use CORS proxy:</label>
+                    <input type="checkbox" id="use_proxy_checkbox">
+                    <button id="save_user_hash" class="menu_button marginLeft5">Save</button>
+                </div>
+            </div>
+            <hr class="sysHR" />
+        </div>
+    </div>
+</div>
