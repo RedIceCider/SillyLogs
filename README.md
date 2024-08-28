@@ -8,4 +8,3 @@ Requires:
 
 To use the plugin, you need to set `enableServerPlugins` to `true` in your SillyTavern `config.yaml` file.
 
-To use a CORS proxy, you need to set `corsProxy` to `true` in your SillyTavern `config.yaml` file.
