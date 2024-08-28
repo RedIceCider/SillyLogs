@@ -105,10 +105,10 @@ async function shareLog(chatlog) {
 
 jQuery(async () => {
   try {
+    await loadSettings();
     const settingsHtml = await $.get(`${extensionFolderPath}/extension_settings.html`);
     $("#extensions_settings").append(settingsHtml);
     $("#save_user_hash").on("click", saveSettings);
-    await loadSettings();
     const logButtonHtml = await $.get(`${extensionFolderPath}/log_button.html`);
     $("#extensionsMenu").append(logButtonHtml);
     const logButton = $('#log_extension');
