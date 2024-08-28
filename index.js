@@ -12,13 +12,15 @@ const defaultSettings = {
   "corsProxy": ""
 };
 
+function initializeSettings() {
+  extension_settings[extensionName] = extension_settings[extensionName] || {};
+  if (Object.keys(extension_settings[extensionName]).length === 0) {
+    Object.assign(extension_settings[extensionName], defaultSettings);
+  }
+}
+
 async function loadSettings() {
   try {
-    extension_settings[extensionName] = extension_settings[extensionName] || {};
-    console.log(extension_settings[extensionName]);
-    if (Object.keys(extension_settings[extensionName]).length === 0) {
-      Object.assign(extension_settings[extensionName], defaultSettings);
-    }
     $("#user_hash").val(extension_settings[extensionName].userHash).trigger("input");
     $("#cors_proxy_url").val(extension_settings[extensionName].corsProxy).trigger("input");
     $('#use_proxy_checkbox').prop('checked', extension_settings[extensionName].useProxy);
@@ -105,9 +107,10 @@ async function shareLog(chatlog) {
 
 jQuery(async () => {
   try {
-    await loadSettings();
+    initializeSettings();
     const settingsHtml = await $.get(`${extensionFolderPath}/extension_settings.html`);
     $("#extensions_settings").append(settingsHtml);
+    await loadSettings();
     $("#save_user_hash").on("click", saveSettings);
     const logButtonHtml = await $.get(`${extensionFolderPath}/log_button.html`);
     $("#extensionsMenu").append(logButtonHtml);
