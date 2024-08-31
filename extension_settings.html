@@ -18,7 +18,7 @@
     }
 
     .sillylogs-input-group {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 
     .sillylogs-label {
@@ -36,13 +36,14 @@
             <div class="sillylogs-content">
                 <div class="sillylogs-input-group">
                     <label for="user_hash" class="sillylogs-label"><b>Catbox User Hash</b></label>
-                    <span>Requires a catbox account. Generate hash <a href="https://catbox.moe/user/manage.php"
-                            target="_blank">here</a>.
+                    <span>Uploads without a user hash are anonymous.<br>
+                        Generate hash <a href="https://catbox.moe/user/manage.php" target="_blank">here</a>.
                     </span>
                     <input id="user_hash" type="text" placeholder="User Hash" class="sillylogs-input" />
                 </div>
                 <div class="sillylogs-input-group">
-                    <label for="cors_proxy_url" class="sillylogs-label"><b>CORS Proxy URL</b></label>
+                    <label for="cors_proxy_url" class="sillylogs-label"><b>CORS Proxy URL</b> <small>Currently
+                            broken</small></label>
                     <span>Include {url} macro for the target URL.</span>
                     <input id="cors_proxy_url" type="text" placeholder="https://example.com/proxy?url={url}"
                         class="sillylogs-input" />
