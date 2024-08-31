@@ -97,7 +97,7 @@ async function shareLog(chatlog) {
     const resultHtml = await $.get(`${extensionFolderPath}/result_dialog.html`);
     const dialog = $(resultHtml);
     dialog.find('#log_url').attr('href', chatlogURL).text(chatlogURL);
-    const spritesURL = `https://sprites.neocities.org/logs/reader?log=${encodeURIComponent(chatlogURL)}`;
+    const spritesURL = `https://sprites.neocities.org/logs/reader?log=${chatlogURL.split('/').pop()}`;
     dialog.find('#sprites_url').attr('href', spritesURL).text('View on Sprites');
     callGenericPopup(dialog, POPUP_TYPE.TEXT, '', { wide: false, large: false, wider: false, okButton: 'Close' });
     $('#share_log_button').html('<i class="fa-solid fa-share margin-r5"></i>Share Log');
