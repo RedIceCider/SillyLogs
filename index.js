@@ -57,6 +57,7 @@ async function openLogMenu() {
   try {
     const logMenuHtml = await $.get(`${extensionFolderPath}/log_menu_dialog.html`);
     const dialog = $(logMenuHtml);
+    dialog.find('#message_range_input').val(`0-${SillyTavern.getContext().chat.length-1}`);
     dialog.find('#share_log_button').on('click', async () => {
       try {
         const rangeInput = String(dialog.find('#message_range_input').val());
@@ -70,6 +71,7 @@ async function openLogMenu() {
         dialog.find('#share_log_button').text('Uploading...');
         const chatlog = await createChatlog(startRange, endRange, forceUpload);
         await shareLog(chatlog);
+        dialog.find('#share_log_button').html('<i class="fa-solid fa-share margin-r5"></i>Share Log');
       } catch (error) {
         console.error("SillyLogs: Error creating or sharing log:", error);
         toastr.error("Failed to create or share log. Check console for details.");
