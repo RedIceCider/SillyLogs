@@ -41,10 +41,10 @@ function saveSettings() {
       return;
     }
 
-    extensionSettings.userHash = userHash;
-    extensionSettings.useProxy = useProxy;
-    extensionSettings.corsProxy = corsProxy;
-    console.log("SillyLogs: Saved settings.", extensionSettings);
+    extension_settings[extensionName].userHash = userHash;
+    extension_settings[extensionName].useProxy = useProxy;
+    extension_settings[extensionName].corsProxy = corsProxy;
+    console.log("SillyLogs: Saved settings.", extension_settings[extensionName]);
     saveSettingsDebounced();
     toastr.success("Settings saved successfully.");
   } catch (error) {

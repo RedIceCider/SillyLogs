@@ -3,8 +3,8 @@ import { extension_settings, getContext } from "../../../extensions.js";
 
 const extensionName = "SillyLogs";
 const extensionSettings = extension_settings[extensionName];
-const userHash = extensionSettings.userHash;
-const useProxy = extensionSettings.useProxy;
+const userHash = extensionSettings?.userHash || "";
+const useProxy = extensionSettings?.useProxy || false;
 const headers = getRequestHeaders();
 
 export async function createChatlog(startRange, endRange, forceUpload) {
